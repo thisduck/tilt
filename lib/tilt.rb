@@ -1,5 +1,5 @@
 module Tilt
-  VERSION = '1.3.2'
+  VERSION = '1.3.3'
 
   @preferred_mappings = Hash.new
   @template_mappings = Hash.new { |h, k| h[k] = [] }
@@ -172,8 +172,8 @@ module Tilt
   register MarukuTemplate,    'markdown', 'mkd', 'md'
   register KramdownTemplate,  'markdown', 'mkd', 'md'
   register BlueClothTemplate, 'markdown', 'mkd', 'md'
-  register RedcarpetTemplate, 'markdown', 'mkd', 'md'
   register RDiscountTemplate, 'markdown', 'mkd', 'md'
+  register RedcarpetTemplate, 'markdown', 'mkd', 'md'
 
   require 'tilt/textile'
   register RedClothTemplate, 'textile'
@@ -181,8 +181,9 @@ module Tilt
   require 'tilt/rdoc'
   register RDocTemplate, 'rdoc'
 
-  require 'tilt/creole'
-  register CreoleTemplate, 'creole'
+  require 'tilt/wiki'
+  register CreoleTemplate,    'wiki', 'creole'
+  register WikiClothTemplate, 'wiki', 'mediawiki', 'mw'
 
   require 'tilt/yajl'
   register YajlTemplate, 'yajl'
